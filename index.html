@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IA en Universidades · Biblioteca Interactiva</title>
+<meta name="description" content="Biblioteca interactiva sobre el uso de IA en la educación superior en Argentina y América Latina: datos, mitos, políticas y buenas prácticas." />
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loader-book"></div>
+  </div>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar">
+    <div class="progress-fill" id="progressBar"></div>
+  </div>
+
+  <!-- Floating Navigation -->
+  <nav class="floating-nav" id="floatingNav">
+    <div class="nav-dot-container" style="background-color: rgba(0, 0, 0, 0.5); padding: 10px; border-radius: 20px; display: flex; flex-direction: column; gap: 10px;">
+        <div class="nav-dot" data-section="Uso de IA" data-target="usodeia" style="background-color: rgba(75, 21, 21, 0.772)"></div>
+        <div class="nav-dot" data-section="IA y Cognición" data-target="cognicion" style="background-color: rgba(14, 28, 56, 0.901)"></div>
+        <div class="nav-dot" data-section="Casos de Estudio" data-target="casos" style="background-color: rgba(55, 27, 102, 0.713)"></div>
+        <div class="nav-dot" data-section="Como usar los Prompts" data-target="prompts" style="background-color: rgba(25, 76, 37, 0.9)"></div>
+    </div>
+</nav>
+
+  <!-- Hero Library Section -->
+  <section class="hero-library" id="hero">
+    <div class="particles" id="particles"></div>
+    
+    <div class="library-container">
+      <h1 class="main-title">Biblioteca Digital de IA en Universidades</h1>
+      <p class="subtitle">Explora cada libro para descubrir el futuro de la educación superior</p>
+      
+      <div class="bookshelf" id="bookshelf">
+        <img src="img/biblioteca.png" usemap="#image-map" alt="Biblioteca Digital" style="width: 100%; max-width: 1400px;">
+        <map name="image-map">
+          <area target="" alt="usodeia" title="Uso de IA" href="#usodeia" 
+                coords="67,205,332,304" shape="rect"
+                onclick="document.getElementById('usodeia').scrollIntoView({behavior: 'smooth'})">
+          <area target="" alt="cognicion" title="IA y Cognición" href="#cognicion" 
+                coords="396,201,681,293" shape="rect"
+                onclick="document.getElementById('cognicion').scrollIntoView({behavior: 'smooth'})">
+          <area target="" alt="docentes" title="Docentes e IA" href="#casos" 
+                coords="737,206,1029,288" shape="rect"
+                onclick="document.getElementById('casos').scrollIntoView({behavior: 'smooth'})">
+          <area target="" alt="buenuso" title="Buen uso de Prompts" href="#prompts" 
+                coords="1085,204,1369,289" shape="rect"
+                onclick="document.getElementById('prompts').scrollIntoView({behavior: 'smooth'})">
+        </map>
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="scroll-text">Explora más</div>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
+  </section>
+    <div class="section-divider"></div>
+
+
+  <!-- Uso de IA Section -->
+  <section class="content-section" id="usodeia">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">Uso de IA en las Universidades</h2>
+        <p>Conocé el panorama actual de la IA en la educación superior latinoamericana</p>
+      </div>
+      <!-- Chat Bubble -->
+      <div class="chat-container">
+        <div class="chat-bubble">
+          <div class="chat-header">
+            <span class="chat-plus">+</span>
+            <span class="chat-question">Hola! Cuál es el porcentaje de estudiantes universitarios que usan IA?</span>
+            <div class="chat-icons">
+              <svg class="mic-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" fill="currentColor"/>
+                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" fill="currentColor"/>
+              </svg>
+              <button class="circle-button">
+                <svg class="circle-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M16.172 11.172L12.636 7.636a.999.999 0 00-1.414 0L7.757 11.172a1 1 0 101.415 1.414L11 10.414V16a1 1 0 102 0v-5.586l1.757 1.757a1 1 0 001.415-1.414z" fill="var(--bg-dark)"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Nueva sección de datos -->
+  <section class="content-section" id="datos-universidad">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">¡Conocé estos datos sobre la IA en la Universidad!</h2>
+      </div>
+      <div class="image-grid">
+        <div class="grid-item">
+          <button class="image-button" onclick="openCard('crecimiento')">
+            <img src="img/crecimiento.png" alt="Datos de crecimiento de IA">
+          </button>
+        </div>
+        <div class="grid-item">
+          <button class="image-button" onclick="openCard('brecha')">
+            <img src="img/brecha.png" alt="Datos de brecha digital">
+          </button>
+        </div>
+        <div class="grid-item">
+          <button class="image-button" onclick="openCard('inversion')">
+            <img src="img/inversion.png" alt="Datos de inversión en IA">
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cards containers -->
+    <div class="card-overlay" id="cardOverlay">
+      <div class="card-container" id="crecimientoCard">
+        <button class="close-card">×</button>
+        <img src="img/crecimiento2.png" alt="Detalles de crecimiento">
+<p class="card-text"><strong>Crecimiento Exponencial</strong><br>
+Desde la llegada de Chat GPT y similares.</p>      </div>
+
+      <div class="card-container" id="brechaCard">
+        <button class="close-card">×</button>
+        <img src="img/brecha2.png" alt="Detalles de brecha digital">
+<p class="card-text"><strong>Brecha de Preparación</strong><br>
+Pocos docentes se sienten preparados para integrar la IA.</p> 
+      </div>
+
+      <div class="card-container" id="inversionCard">
+        <button class="close-card">×</button>
+        <img src="img/inversion2.png" alt="Detalles de inversión">
+<p class="card-text"><strong>Inversión Creciente</strong><br>
+Las instituciones planean aumentar su inversión en IA</p> 
+      </div>
+    </div>
+  </section>
+
+  <!-- Nueva sección de imágenes -->
+  <section class="content-section" id="galeria-colegios">
+    <div class="section-container">
+      <div class="section-header">
+      </div>
+      <div class="colegios-grid">
+        <div class="colegios-row">
+          <img src="img/colegio.png" alt="Colegio 1">
+          <img src="img/colegio2.png" alt="Colegio 2">
+          <img src="img/colegio2.png" alt="Colegio 3">
+          <img src="img/colegio2.png" alt="Colegio 4">
+          <img src="img/colegio2.png" alt="Colegio 5">
+        </div>
+        <div class="colegios-row">
+          <img src="img/colegio2.png" alt="Colegio 6">
+          <img src="img/colegio2.png" alt="Colegio 7">
+          <img src="img/colegio2.png" alt="Colegio 8">
+          <img src="img/colegio2.png" alt="Colegio 9">
+          <img src="img/colegio2.png" alt="Colegio 10">
+        </div>
+      </div>
+    </div>
+    <div class="stats-message">
+    <div class="stats-container">
+      <p class="stats-text">Y aun así, sólo 1 de 10 universidades tienen políticas IA</p>
+    </div>
+  </div>
+  </section>
+  <div class="section-divider"></div>
+
+  <!-- Reemplazar la sección actual del cerebro con esto -->
+  <section class="content-section" id="cognicion">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">IA y Cognición</h2>
+      <p>¿Cómo nos afecta? Toca cada parte del cerebro para averiguar!</p>
+    </div>
+    <div class="cerebro-container">
+      <img src="img/cerebro.png" usemap="#brain-map">
+      <div id="popup" class="popup">
+        <img id="popupImg" src="" alt="Popup Image">
+      </div>
+      <div id="overlay" class="overlay"></div>
+    </div>
+
+    <map name="brain-map">
+      <area target="" alt="Memoria" title="Memoria" 
+        href="#" onclick="showPopup('img/memoria.png'); return false;" 
+        coords="425,555,377,526,361,490,369,445,396,408,423,387,453,368,487,347,522,343,561,332,589,325,608,325,615,366,617,442,614,496,614,524,574,551,533,570,487,573,432,561" 
+        shape="poly">
+      
+      <area target="" alt="Atención" title="Atención" 
+        href="#" onclick="showPopup('img/atencion.png'); return false;" 
+        coords="586,48,511,48,443,69,372,78,325,115,269,142,236,181,200,209,184,247,157,285,164,346,170,395,207,440,253,468,327,470,354,465,388,402,447,361,488,338,495,265,495,216,505,175" 
+        shape="poly">
+      
+      <area target="" alt="Pensamiento Crítico" title="Pensamiento Crítico" 
+        href="#" onclick="showPopup('img/pensamiento.png'); return false;" 
+        coords="703,758,674,686,641,635,621,606,585,582,572,554,589,537,619,529,641,530,659,545,679,590,702,618,712,633,739,718,748,755" 
+        shape="poly">
+      
+      <area target="" alt="Creatividad" title="Creatividad" 
+        href="#" onclick="showPopup('img/creatividad.png'); return false;" 
+        coords="657,536,758,513,825,494,882,500,933,521,943,528,939,569,914,612,887,647,848,657,788,665,732,640,682,595" 
+        shape="poly">
+      
+      <area target="" alt="Metacognición" title="Metacognición" 
+        href="#" onclick="showPopup('img/metacognicion.png'); return false;" 
+        coords="653,539,617,527,665,511,720,481,758,482,818,444,852,417,871,366,903,322,912,285,904,233,927,196,931,184,961,211,978,253,996,276,1007,309,1030,354,1032,386,1032,446,1016,494,994,519,959,526,892,508,832,494,782,502,717,524" 
+        shape="poly">
+      
+      <area target="" alt="Carga Cognitiva" title="Carga Cognitiva" 
+        href="#" onclick="showPopup('img/carga.png'); return false;" 
+        coords="488,331,495,274,495,203,574,69,615,48,671,48,674,57,737,58,777,80,821,85,863,112,880,132,926,166,928,195,910,225,914,275,904,322,879,351,863,399,836,431,791,462,758,478,723,478,687,503,627,525,612,529,620,420,612,338,611,322,579,321,530,338,497,340" 
+        shape="poly">
+    </map>
+  </div>
+</section>
+
+  <div class="section-divider"></div>
+
+  <!-- Casos Section -->
+  <section class="content-section" id="casos">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">Docentes e IA</h2>
+        <p>Experiencias y señales de transformación en Argentina y LATAM</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <img src="img/2018.png" alt="Caso 2018" class="timeline-image">
+            <p class="timeline-date">2018</p>
+            <div class="timeline-hover-card">
+              <h3>Primeros acercamientos</h3>
+              <p>Exploración inicial como herramienta de apoyo administrativo</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <img src="img/2020.png" alt="Caso 2020" class="timeline-image">
+            <p class="timeline-date">2020</p>
+            <div class="timeline-hover-card left">
+              <h3>Expansión inicial</h3>
+              <p>Con la pandemia como catalizador, la IA se abre terreno en la docencia</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <img src="img/2022.png" alt="Caso 2022" class="timeline-image">
+            <p class="timeline-date">2022</p>
+            <div class="timeline-hover-card">
+              <h3>Institucionalización y debate</h3>
+              <p>Ante la expansión de herramientas IA, aparecen políticas, guías y capacitaciones</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <img src="img/2024.png" alt="Caso 2024" class="timeline-image">
+            <p class="timeline-date">2024</p>
+            <div class="timeline-hover-card left">
+              <h3>Actualidad y usos consolidados</h3>
+              <p>Integración de la IA como apoyo creativo y organizativo, con enfoque ético y consciente</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="section-divider"></div>
+
+ <section class="content-section" id="prompts">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Buenos usos de Prompts en lo académico</h2>
+      <p>Guía práctica para cátedras y carreras</p>
+    </div>
+    
+    <!-- Imagen principal -->
+    
+    <!-- Cards fijas -->
+    <div class="fixed-cards">
+      <div class="fixed-card">
+        <img src="img/docentes.png" alt="Prompts para docentes">
+        <div class="card-content">
+          <h3>Para Docentes</h3>
+          <ul>
+            <li>Diseño de materiales y actividades adaptadas</li>
+            <li>Generar comentarios personalizados</li>
+            <li>Organizar planes de clase</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fixed-card">
+        <img src="img/estudiantes.png" alt="Prompts para estudiantes">
+        <div class="card-content">
+          <h3>Para Estudiantes</h3>
+          <ul>
+            <li>Resolver dudas y reforzar conceptos</li>
+            <li>Simulaciones, resúmenes y ejercicios</li>
+            <li>Contrastar info</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fixed-card">
+        <img src="img/instituciones.png" alt="Prompts para instituciones">
+        <div class="card-content">
+          <h3>Para Instituciones</h3>
+          <ul>
+            <li>Detectar bajo rendimiento académico</li>
+            <li>Automatizar inscripciones y comunicación</li>
+            <li>Capacitar a docentes en uso pedagógico de IA</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+ <!-- Stats Slider Container -->
+<div class="stats-slider" id="statsSlider">
+  <div class="slider-content">
+    <h3>Te lo muestro con un gráfico!</h3>
+    <div class="pie-chart-container">
+      <div class="pie-chart">
+        <div class="pie-slice">
+          <span class="percentage">39.3%</span>
+          <p>Esta parte representa a quienes utilizan IA para crear y mejorar el contenido educativo en la universidad.</p>
+          <button class="stats-button" id="teacherStatsBtn">
+            ¿Y lxs docentes usan IA?
+            <div class="chat-icons">
+              <svg class="mic-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" fill="currentColor"/>
+                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" fill="currentColor"/>
+              </svg>
+              <svg class="circle-icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M16.172 11.172L12.636 7.636a.999.999 0 00-1.414 0L7.757 11.172a1 1 0 101.415 1.414L11 10.414V16a1 1 0 102 0v-5.586l1.757 1.757a1 1 0 001.415-1.414z" fill="var(--bg-dark)"/>
+              </svg>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- New Teacher Stats Container -->
+    <div class="teacher-stats-container" id="teacherStatsContainer" style="display: none;">
+      <h4>Si! Muchxs utilizan IA. Te explico:</h4>
+      <div class="comparison-chart">
+        <div class="chart-bar">
+          <div class="bar-label">Desarrollo curricular</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 57%;">57%</div>
+          </div>
+        </div>
+        <div class="chart-bar">
+          <div class="bar-label">Delegación de calificaciones</div>
+          <div class="bar-track">
+            <div class="bar-fill" style="width: 49%;">49%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Close Slider Button -->
+    <button class="close-slider-btn" id="closeSliderBtn">
+      Cerrar
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Final Section -->
+  <section class="content-section" id="final">
+    <div class="section-header">
+      <h2 class="section-title" style="border-bottom: none; color: var(--gold);">El futuro académico ya convive con la IA.</h2>
+      <p>La clave está en cómo elegimos integrarla.</p>
+    </div>
+</section>
+  <div class="section-divider"></div>
+
+
+<!-- Add before the final section -->
+<section class="content-section" id="fuentes">
+  <div class="section-container">
+    <div class="section-header">
+      <h2 class="section-title">Fuentes y Referencias</h2>
+      <p>Material consultado para esta biblioteca digital</p>
+    </div>
+    
+    
+    <div class="sources-grid">
+      <div class="source-category">
+        <h3>Charlas TED</h3>
+        <ul>
+          <li><a href="https://youtu.be/r23rNosmve0" target="_blank">TEDxUISRAEL: IA en Educación</a></li>
+          <li><a href="https://youtu.be/MZhKDt86PX8" target="_blank">TEDxUTNCórdoba: Transformación Digital</a></li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Recursos Académicos</h3>
+        <ul>
+          <li><a href="https://arxiv.org/abs/2311.05373" target="_blank">Cornell University - Impacto de IA</a></li>
+          <li><a href="http://unesdoc.unesco.org/" target="_blank">UNESCO Documentos</a></li>
+          <li><a href="http://educause.edu/" target="_blank">EDUCAUSE</a></li>
+          <li><a href="http://hai.stanford.edu/" target="_blank">Stanford HAI</a></li>
+          <li><a href="https://arxiv.org/abs/2408.07302" target="_blank">Cornell - Estudios Recientes</a></li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Artículos y Noticias</h3>
+        <ul>
+          <li><a href="https://elpais.com/proyecto-tendencias/2025-01-10/la-necesidad-de-ensenar-a-pensar.html" target="_blank">El País - Enseñar a Pensar</a></li>
+          <li><a href="https://www.huffingtonpost.es/sociedad/adios-examenes-siempre-profesores-piden-cambio-urgente-detectar-nueva-trampa.html" target="_blank">HuffPost - Cambios en Evaluación</a></li>
+          <li><a href="https://chequeado.com/el-explicador/desinformacion-inteligencia-artificial-y-consumo-de-noticias-5-claves-sobre-la-situacion-en-la-argentina-y-en-el-mundo/" target="_blank">Chequeado - IA y Desinformación</a></li>
+        </ul>
+      </div>
+
+      <div class="source-category">
+        <h3>Recursos Adicionales</h3>
+        <ul>
+          <li><a href="https://www.weforum.org/publications/global-risks-report-2024/" target="_blank">World Economic Forum</a></li>
+          <li><a href="https://www.anthropic.com/news/anthropic-education-report-how-university-students-use-claude" target="_blank">Anthropic - Reporte Educativo</a></li>
+          <li><a href="https://www.educapeques.com/ia-educacion/prompts-educativos-que-son-y-como-redactarlos-correctamente.html" target="_blank">EducaPeques - Prompts Educativos</a></li>
+          <li><a href="https://articulandoo.com/prompts-generar-materiales-didacticos/" target="_blank">Articulando - Materiales Didácticos</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <div class="section-divider"></div>
+
+</section>
+  
+
+  <!-- Back to Top Button -->
+  <div class="back-to-top" id="backToTop">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 14l5-5 5 5z"/>
+    </svg>
+  </div>
+
+
+  <script src="scripts.js"></script>
+
+
+  
+</body>
+</html>
